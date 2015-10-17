@@ -1,0 +1,44 @@
+{
+    "name": "PocketGuide/Generators",
+	"description": "Generate new classes for M2",
+	"license": "MIT",
+	"type": "magento2-module",
+	"require": {
+        "php": ">=5.4.0",
+        "symfony/yaml": "2.*",
+        "symfony/filesystem": "~2",
+        "composer/composer": "1.0.0-alpha10"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "phpunit/phpunit": "~3.7",
+        "bossa/phpspec2-expect": "*",
+        "magento/magento2ce": "1.0.0-beta"
+    },
+    "repositories": [
+      {
+        "type": "git",
+        "url": "https://github.com/magento/magento2"
+      }
+    ],
+    "extra": {
+      "map": [
+        [
+          "*",
+          "PocketGuide/Generators"
+        ]
+      ]
+    },
+    "autoload": {
+      "psr-4": {
+        "PocketGuide\\Generators\\": "."
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "PocketGuide\\Generators\\": ".",
+        "Magento\\" : "vendor/magento/magento2ce/app/code/",
+        "Magento\\Framework\\": "vendor/magento/magento2ce/lib/internal/"
+      }
+    }
+}

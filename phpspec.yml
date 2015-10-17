@@ -1,0 +1,6 @@
+suites:
+    generator_suite:
+        namespace: PocketGuide\Generators
+        psr4_prefix: PocketGuide\Generators
+        src_path: .
+
