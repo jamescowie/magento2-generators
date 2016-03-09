@@ -1,5 +1,5 @@
 {
-    "name": "jcowie/generators"
+  "name": "jcowie/generators",
 	"description": "Generate new classes for M2",
 	"license": "MIT",
 	"type": "magento2-module",
@@ -21,22 +21,15 @@
         "url": "https://github.com/magento/magento2"
       }
     ],
-    "extra": {
-      "map": [
-        [
-          "*",
-          "PocketGuide/Generators"
-        ]
-      ]
-    },
     "autoload": {
+      "files": [ "registration.php" ],
       "psr-4": {
-        "PocketGuide\\Generators\\": "."
+        "Jcowie\\Generators\\": "."
       }
     },
     "autoload-dev": {
       "psr-4": {
-        "PocketGuide\\Generators\\": ".",
+        "Jcowie\\Generators\\": ".",
         "Magento\\" : "vendor/magento/magento2ce/app/code/",
         "Magento\\Framework\\": "vendor/magento/magento2ce/lib/internal/"
       }
