@@ -1,5 +1,5 @@
 {
-    "name": "PocketGuide/Generators",
+    "name": "jcowie/generators"
 	"description": "Generate new classes for M2",
 	"license": "MIT",
 	"type": "magento2-module",
