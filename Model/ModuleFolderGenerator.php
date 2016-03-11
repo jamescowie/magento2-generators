@@ -1,6 +1,6 @@
 <?php
 
-namespace PocketGuide\Generators\Model;
+namespace Jcowie\Generators\Model;
 
 use \Symfony\Component\Filesystem\Filesystem;
 

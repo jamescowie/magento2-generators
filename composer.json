@@ -29,9 +29,7 @@
     },
     "autoload-dev": {
       "psr-4": {
-        "Jcowie\\Generators\\": ".",
-        "Magento\\" : "vendor/magento/magento2ce/app/code/",
-        "Magento\\Framework\\": "vendor/magento/magento2ce/lib/internal/"
+        "Jcowie\\Generators\\": "."
       }
     }
 }

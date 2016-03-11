@@ -1,6 +1,6 @@
 <?php
 
-namespace PocketGuide\Generators\Commands;
+namespace Jcowie\Generators\Commands;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Command\Command;
 
-use PocketGuide\Generators\Model\ModuleFolderGenerator as Generator;
+use Jcowie\Generators\Model\ModuleFolderGenerator as Generator;
 
 class GeneratorCommand extends Command
 {
