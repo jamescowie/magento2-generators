@@ -1,6 +1,5 @@
 suites:
     generator_suite:
-        namespace: PocketGuide\Generators
-        psr4_prefix: PocketGuide\Generators
-        src_path: .
+        namespace: Jcowie
+        psr4_prefix: Jcowie
 

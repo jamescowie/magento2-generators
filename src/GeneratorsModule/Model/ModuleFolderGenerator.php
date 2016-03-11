@@ -1,6 +1,6 @@
 <?php
 
-namespace Jcowie\Generators\Model;
+namespace Jcowie\GeneratorsModule\Model;
 
 use \Symfony\Component\Filesystem\Filesystem;
 

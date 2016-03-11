@@ -4,16 +4,15 @@
 	"license": "MIT",
 	"type": "magento2-module",
 	"require": {
-        "php": ">=5.4.0",
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/framework": "100.0.*",
         "symfony/yaml": "2.*",
-        "symfony/filesystem": "~2",
-        "composer/composer": "1.0.0-alpha10"
+        "symfony/filesystem": "~2"
     },
     "require-dev": {
         "phpspec/phpspec": "~2.0",
         "phpunit/phpunit": "~3.7",
-        "bossa/phpspec2-expect": "*",
-        "magento/magento2ce": "1.0.0-beta"
+        "bossa/phpspec2-expect": "*"
     },
     "repositories": [
       {
@@ -22,14 +21,19 @@
       }
     ],
     "autoload": {
-      "files": [ "registration.php" ],
+      "files": [ "src/GeneratorModule/registration.php" ],
       "psr-4": {
-        "Jcowie\\Generators\\": "."
+        "Jcowie\\GeneratorsModule\\": "src/GeneratorModule/",
+        "Jcowie\\Generators": "src/Generators"
       }
     },
     "autoload-dev": {
       "psr-4": {
-        "Jcowie\\Generators\\": "."
+        "Jcowie\\GeneratorsModule\\": "src/GeneratorModule/",
+        "Jcowie\\Generators": "src/Generators"
       }
+    },
+    "config": {
+      "bin-dir": "bin"
     }
 }

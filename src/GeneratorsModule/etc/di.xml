@@ -2,7 +2,7 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="moduleCommand" xsi:type="object">Jcowie\Generators\Commands\GeneratorCommand</item>
+                <item name="moduleCommand" xsi:type="object">Jcowie\GeneratorsModule\Commands\GeneratorCommand</item>
             </argument>
         </arguments>
     </type>
