@@ -28,7 +28,7 @@
       "files": [ "src/GeneratorsModule/registration.php" ],
       "psr-4": {
         "Jcowie\\GeneratorsModule\\": "src/GeneratorsModule/",
-        "Jcowie\\generators\\": "src/Generators"
+        "Jcowie\\Generators\\": "src/Generators"
       }
     },
     "config": {
