@@ -21,7 +21,7 @@
       }
     ],
     "autoload": {
-      "files": [ "src/GeneratorModule/registration.php" ],
+      "files": [ "src/GeneratorsModule/registration.php" ],
       "psr-4": {
         "Jcowie\\GeneratorsModule\\": "src/GeneratorModule/",
         "Jcowie\\Generators\\": "src/Generators"
