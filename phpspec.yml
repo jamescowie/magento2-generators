@@ -1,3 +1,4 @@
+bootstrap: '../../../app/autoload.php'
 extensions:
     - Nagno\Phpspec\BootstrapMagento2\Bootstrap
 suites:
