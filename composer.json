@@ -10,7 +10,7 @@
         "symfony/filesystem": "~2"
     },
     "require-dev": {
-        "phpspec/phpspec": "~2.0",
+        "phpspec/phpspec": "^2.4.1",
         "phpunit/phpunit": "~3.7",
         "bossa/phpspec2-expect": "*"
     },
@@ -18,17 +18,17 @@
       {
         "type": "git",
         "url": "https://github.com/magento/magento2"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/nagno/phpspec-bootstrap-magento2.git"
       }
     ],
     "autoload": {
       "files": [ "src/GeneratorsModule/registration.php" ],
       "psr-4": {
-        "Jcowie\\GeneratorsModule\\": "src/GeneratorsModule/"
-      }
-    },
-    "autoload-dev": {
-      "psr-4": {
-        "Jcowie\\GeneratorsModule\\": "src/GeneratorsModule/"
+        "Jcowie\\GeneratorsModule\\": "src/GeneratorsModule/",
+        "Jcowie\\generators\\": "src/Generators"
       }
     },
     "config": {
