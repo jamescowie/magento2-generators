@@ -24,13 +24,13 @@
       "files": [ "src/GeneratorModule/registration.php" ],
       "psr-4": {
         "Jcowie\\GeneratorsModule\\": "src/GeneratorModule/",
-        "Jcowie\\Generators": "src/Generators"
+        "Jcowie\\Generators\\": "src/Generators"
       }
     },
     "autoload-dev": {
       "psr-4": {
         "Jcowie\\GeneratorsModule\\": "src/GeneratorModule/",
-        "Jcowie\\Generators": "src/Generators"
+        "Jcowie\\Generators\\": "src/Generators"
       }
     },
     "config": {
