@@ -1,5 +1,6 @@
+extensions:
+    - Nagno\Phpspec\BootstrapMagento2\Bootstrap
 suites:
     generator_suite:
         namespace: Jcowie
         psr4_prefix: Jcowie
-
