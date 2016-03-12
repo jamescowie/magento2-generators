@@ -5,21 +5,23 @@ use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use \Symfony\Component\Filesystem\Filesystem;
 
 /**
  * Defines application features from the specific context.
  */
 class CoreDomainContext implements Context, SnippetAcceptingContext
 {
-    /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
-     */
+
+    private $moduleGenerator;
+    private $output;
+    private $path;
+    private $filesystem;
+
     public function __construct()
     {
+        $this->filesystem = new Filesystem();
+        $this->moduleGenerator = new \Jcowie\Generators\Type\Module($this->filesystem);
     }
 
     /**
@@ -27,22 +29,36 @@ class CoreDomainContext implements Context, SnippetAcceptingContext
      */
     public function theGeneratorFileExists()
     {
-        throw new PendingException();
+        return true;
     }
 
     /**
-     * @When I run the generator :arg1
+     * @When I run the generator with the path :path
      */
-    public function iRunTheGenerator($arg1)
+    public function iRunTheGenerator($path)
     {
-        throw new PendingException();
+        $this->path = $path;
+        $this->output = $this->moduleGenerator->make($path);
     }
 
     /**
-     * @Then Then I should see an exception as no name is set for the module
+     * @Then I should see a folder that patches the path
      */
     public function thenIShouldSeeAnExceptionAsNoNameIsSetForTheModule()
     {
-        throw new PendingException();
+        if ($this->filesystem->exists($this->path)) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @AfterScenario
+     */
+    public function cleanFs()
+    {
+        $folders = explode("/", $this->path);
+
+        $this->filesystem->remove($folders[0]);
     }
 }

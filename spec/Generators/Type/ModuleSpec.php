@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\PocketGuide\Generators\Model;
+namespace spec\Jcowie\Generators\Type;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class ModuleFolderGeneratorSpec extends ObjectBehavior
+class ModuleSpec extends ObjectBehavior
 {
     function let(\Symfony\Component\Filesystem\Filesystem $filesystem)
     {
@@ -14,7 +14,7 @@ class ModuleFolderGeneratorSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('PocketGuide\Generators\Model\ModuleFolderGenerator');
+        $this->shouldHaveType('Jcowie\Generators\Type\Module');
     }
 
     function it_should_throw_an_exception_if_a_module_folder_already_exists($filesystem)

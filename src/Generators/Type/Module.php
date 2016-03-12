@@ -1,10 +1,10 @@
 <?php
 
-namespace Jcowie\GeneratorsModule\Model;
+namespace Jcowie\Generators\Type;
 
 use \Symfony\Component\Filesystem\Filesystem;
 
-class ModuleFolderGenerator
+class Module
 {
     /** @var \Symfony\Component\Filesystem\Filesystem $filesystem */
     private $filesystem;
@@ -24,12 +24,10 @@ class ModuleFolderGenerator
      */
     public function make($path)
     {
-        $basePath = 'app/code/';
-
-        if ($this->filesystem->exists($basePath . $path)) {
+        if ($this->filesystem->exists($path)) {
             throw new \Exception("Error module already exists");
         }
 
-        return $this->filesystem->mkdir($basePath . $path, 0700);
+        return $this->filesystem->mkdir($path, 0700);
     }
 }
