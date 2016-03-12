@@ -5,21 +5,22 @@ use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use Symfony\Component\Process\PhpExecutableFinder;
+use Symfony\Component\Process\Process;
+use \Symfony\Component\Filesystem\Filesystem;
 
 /**
  * Defines application features from the specific context.
  */
 class CliContext implements Context, SnippetAcceptingContext
 {
-    /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
-     */
+    private $output;
+
+    private $filesystem;
+
     public function __construct()
     {
+        $this->filesystem = new Filesystem();
     }
 
     /**
@@ -27,15 +28,19 @@ class CliContext implements Context, SnippetAcceptingContext
      */
     public function theGeneratorCliOptionExists()
     {
-        throw new PendingException();
+        // @TODO parse the output from the magento command me thinks
+        return true;
     }
 
     /**
-     * @When I run :arg1
+     * @When I run :command
      */
-    public function iRun($arg1)
+    public function iRun($command)
     {
-        throw new PendingException();
+        $process = new Process("php " . getcwd() . "/../../../".  $command);
+        $process->run();
+
+        $this->output = $process->getOutput();
     }
 
     /**
@@ -43,6 +48,22 @@ class CliContext implements Context, SnippetAcceptingContext
      */
     public function iShouldSeeAnErrorMessage()
     {
-        throw new PendingException();
+        expect($this->output)->notToBe(null);
+    }
+
+    /**
+     * @Then I should see :output
+     */
+    public function iShouldSee($output)
+    {
+        expect(trim($this->output))->toBe($output);
+    }
+
+    /**
+     * @AfterScenario
+     */
+    public function cleanFs()
+    {
+        $this->filesystem->remove("app");
     }
 }
