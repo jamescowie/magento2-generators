@@ -1,0 +1,17 @@
+{
+  "name": "$NAME$",
+  "description": "Change the modules description here",
+  "type": "magento2-module",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0"
+  },
+  "version": "0.0.1",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "$NAMESPACE$": ""
+    }
+  }
+}

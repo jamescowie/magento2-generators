@@ -1,0 +1,10 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="aboutCommand" xsi:type="object">Jcowie\Generators\Commands\AboutCommand</item>
+                <item name="generateModuleCommand" xsi:type="object">Jcowie\Generators\Commands\GenerateModuleCommand</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
