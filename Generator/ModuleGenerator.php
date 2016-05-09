@@ -63,7 +63,7 @@ class ModuleGenerator
             ),
             $this->filesystem->dumpFile(
                 self::APP_CODE_PATH . $name . '/composer.json',
-                $this->compiler->compile('composer.json.txt', ['NAME' => 'Test_Test', 'NAMESPACE' => '\\\Test\\\Test\\\'])
+                $this->compiler->compile('composer.json.txt', ['NAME' => 'Test_Test', 'NAMESPACE' => '\\Test\\\Test\\'])
             )
         ];
     }
