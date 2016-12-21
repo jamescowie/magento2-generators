@@ -5,7 +5,8 @@
   "type": "magento2-module",
   "require": {
     "php": "~5.5.0|~5.6.0|~7.0.0",
-    "magento/framework": "100.0.*",
+    "magento/product-community-edition": "2.1.2",
+    "composer/composer": "~1.0",
     "symfony/yaml": "2.*",
     "symfony/filesystem": "~2"
   },
@@ -20,8 +21,8 @@
   },
   "repositories": [
     {
-      "type": "git",
-      "url": "https://github.com/magento/magento2"
+            "type": "composer",
+            "url": "https://repo.magento.com/"
     },
     {
       "type": "git",
@@ -46,5 +47,6 @@
   "config": {
     "bin-dir": "bin"
   },
-  "minimum-stability": "stable"
+    "minimum-stability": "alpha",
+    "prefer-stable": true
 }
